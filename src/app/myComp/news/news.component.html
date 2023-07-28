@@ -1,0 +1,53 @@
+<!-- <div *ngFor="let article of news">
+    <h2>{{ article.author }}</h2>
+    <p>{{article.content}}</p>
+    <p>{{ article.description }}</p>
+    <img [src]="article.urlToImage" alt="News Image" />
+    <a [href]="article.articleUrl" target="_blank">Read More</a>
+    <p>{{ article.publishedAt | date }}</p>
+    <p>Source: {{ article.source }}</p>
+  </div> -->
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-6">
+            <label for="city">Country</label>
+            <select name="ct" class="form-control" #ct="ngModel" ngModel>
+                <option *ngFor="let ct of city">{{ct}}</option>
+            </select>
+        </div>
+
+        <div class="col-6">
+            2
+        </div>
+
+    </div>
+<br><br>
+
+
+    <div class="container">
+        <h2>Top headlines</h2> <br>
+
+        <div class="row">
+
+            <div class="col-lg-3" *ngFor="let dt of news">
+
+                <div class="card" style="width: 16rem;">
+                    <img [src]="dt.urlToImage" alt="News Image" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{dt.title}}</h5>
+                        <p><b>Author : </b>{{dt.author}}</p>
+                        <p class="card-text">{{dt.description}}</p>
+                        <p>{{dt.publishedAt | date}}</p>
+                        <a href="{{dt.url}}" class="btn btn-dark">Read more...</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>

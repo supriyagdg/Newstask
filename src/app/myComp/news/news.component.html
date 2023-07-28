@@ -1,27 +1,25 @@
-<!-- <div *ngFor="let article of news">
-    <h2>{{ article.author }}</h2>
-    <p>{{article.content}}</p>
-    <p>{{ article.description }}</p>
-    <img [src]="article.urlToImage" alt="News Image" />
-    <a [href]="article.articleUrl" target="_blank">Read More</a>
-    <p>{{ article.publishedAt | date }}</p>
-    <p>Source: {{ article.source }}</p>
-  </div> -->
-
-
+<br>
 <div class="container">
 
     <div class="row">
 
-        <div class="col-6">
-            <label for="city">Country</label>
-            <select name="ct" class="form-control" #ct="ngModel" ngModel>
-                <option *ngFor="let ct of city">{{ct}}</option>
-            </select>
+        <div class="col-3">
+           <button class="btn btn-info" routerLink="/us">Us news</button> &nbsp;&nbsp;
+           <button class="btn btn-info" routerLink="/germany">Germany news</button>
+        </div>
+
+        <div class="col-3">
+            <form class="d-flex">
+                <input class="form-control me-2" type="date" name="date" #date="ngModel" ngModel class="form-control">
+                <button (click)="getDateWisedata(date.value)" class="btn btn-outline-primary">date</button>
+            </form>
         </div>
 
         <div class="col-6">
-            2
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" name="searchBox" placeholder="Search" aria-label="Search" #searchBox="ngModel" ngModel>
+            <button class="btn btn-outline-success" type="submit" (click)="getSearchResult(searchBox.value)">Search</button>
+          </form>
         </div>
 
     </div>

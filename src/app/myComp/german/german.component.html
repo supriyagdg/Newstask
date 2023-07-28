@@ -1,0 +1,24 @@
+
+<div class="container">
+    <h2>Top business headlines from Germany</h2> <br>
+
+    <div class="row">
+
+        <div class="col-lg-3" *ngFor="let dt of GermanyNews">
+
+            <div class="card" style="width: 16rem;">
+                <img [src]="dt.urlToImage" alt="News Image" />
+                <div class="card-body">
+                    <h5 class="card-title">{{dt.title}}</h5>
+                    <p><b>Author : </b>{{dt.author}}</p>
+                    <p class="card-text">{{dt.description}}</p>
+                    <p>{{dt.publishedAt | date}}</p>
+                    <a href="{{dt.url}}" class="btn btn-dark">Read more...</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
